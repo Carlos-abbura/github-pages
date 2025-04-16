@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Invitación</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+    }
+
+    .invitacion-container {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-top: 370.3704%;
+      box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16);
+      margin-top: 0em;
+      margin-bottom: 0.9em;
+      overflow: hidden;
+      border-radius: 8px;
+      will-change: transform;
+    }
+
+    iframe {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      border: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .botones-flotantes {
+      position: fixed;
+      bottom: 75px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 20px;
+      z-index: 10000;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 5px 10px;
+      border-radius: 30px;
+    }
+
+    .boton-flotante {
+      background-color: white;
+      border: 3px solid #5564eb;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+      cursor: pointer;
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .boton-flotante:hover {
+      transform: scale(1.1);
+    }
+
+    .boton-flotante img {
+      width: 80%;
+      height: 80%;
+      object-fit: cover;
+      border-radius: 40%;
+    }
+
+    /* Contenedor emergente */
+    .contenedor-info {
+      display: none;
+      position: fixed;
+      top: 5%;
+      left: 5%;
+      width: 90%;
+      height: 90%;
+      background: white;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      border-radius: 12px;
+      z-index: 20000;
+      overflow: hidden;
+    }
+
+    .contenedor-info iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Botón cerrar */
+    .boton-cerrar {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #ff4d4d;
+      border: none;
+      color: white;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 20px;
+      cursor: pointer;
+      z-index: 20001;
+    }
+
+    .boton-cerrar:hover {
+      background-color: #ff1a1a;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Invitación Canva -->
+  <div class="invitacion-container">
+    <iframe loading="lazy"
+      src="https://www.canva.com/design/DAGkeC9yp5c/Fepiq10lY5uN3rDpIr20WA/watch?embed"
+      allowfullscreen="allowfullscreen"
+      allow="fullscreen">
+    </iframe>
+  </div>
+
+  <!-- Botones flotantes -->
+  <div class="botones-flotantes">
+    <!-- Botón Cómo llegar -->
+    <a href="https://maps.app.goo.gl/sneCQfDaQDNqiyi87" target="_blank" class="boton-flotante" title="Cómo llegar">
+      <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3B5YnVzMGcweHRweDZ3cWFkbzk5bzdkYmJ0ZDg3Zmt5dXZlY2JjYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/bKEpYgFmrnGzFuFfrT/giphy.gif" alt="Cómo llegar">
+    </a>
+
+    <!-- Botón WhatsApp -->
+    <a href="https://wa.link/9nqqqt" target="_blank" class="boton-flotante" title="WhatsApp">
+      <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExeno3OTFnZjhjd2RxYm5sYjMydWM5cTF6ZjZlaDhybG51amxhdmhlbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/jj1nSei4YucbDfcPxt/giphy.gif" alt="WhatsApp">
+    </a>
+
+    <!-- Botón Info -->
+    <div class="boton-flotante" title="Más info" onclick="mostrarInfo()">
+      <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3h3ZXVwaWVsMmRlcXZva2hmMzA1NW14anl6dHVqMGdnYW9pNXN5dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/Y0sXcPq031L31dWDIi/giphy.gif" alt="Info">
+    </div>
+  </div>
+
+  <!-- Contenedor de información adicional -->
+  <div id="infoEmergente" class="contenedor-info">
+    <button class="boton-cerrar" onclick="cerrarInfo()">×</button>
+    <iframe loading="lazy" 
+            src="https://www.canva.com/design/DAGkodTU99M/uTkAAckeYwE-Nr5Ibl4skg/view?embed" 
+            allowfullscreen="allowfullscreen" 
+            allow="fullscreen">
+    </iframe>
+  </div>
+
+  <script>
+    function mostrarInfo() {
+      document.getElementById('infoEmergente').style.display = 'block';
+    }
+
+    function cerrarInfo() {
+      document.getElementById('infoEmergente').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
